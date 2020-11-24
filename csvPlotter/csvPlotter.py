@@ -4,10 +4,9 @@ from matplotlib.backends.backend_pdf import PdfPages
 import numpy as np
 from reader import Reader
 
-dataframe = pd.read_csv('/home/sarv/Downloads/Reading Diaries - Sheet2.csv')
+dataframe = pd.read_csv('/home/sarv/Downloads/Reading Diaries - Sheet3.csv')
 target = 10
-readers = [Reader(dataframe['Sarv'], target), Reader(dataframe['Ashish'], target), Reader(dataframe['Ankit'], target),
-           Reader(dataframe['Richa'], 5)]
+readers = [Reader(dataframe['Sarv'], target), Reader(dataframe['Ashish'], target), Reader(dataframe['Ankit'], target)]
 names = []
 total_pages = []
 mean_pages = []
@@ -55,9 +54,8 @@ plot_data(6, names, 'Mean pages', mean_pages)
 
 print(dataframe)
 
-pdf = PdfPages("Sprint2Results.pdf")
+pdf = PdfPages("Sprint3Results.pdf")
 for fig in plt.get_fignums(): ## will open an empty extra figure :(
     pdf.savefig(fig)
 pdf.close()
 plt.show()
-print("Hello")
