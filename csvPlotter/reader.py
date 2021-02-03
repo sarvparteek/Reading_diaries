@@ -37,9 +37,9 @@ class Reader:
         self.eff_violations = self.week["eff_violations"] #+ self.week2["eff_violations"]
         # Weekly violation counting system skips the case where someone didn't read on the last day of week 1 and first
         # day of week 2
-        if self.data.iloc[self.week_length - 1] < self.daily_target: #and \
+        #if self.data.iloc[self.week_length - 1] < self.daily_target: #and \
            #self.data.iloc[self.week_length] < self.daily_target:
-            self.violations += 1
-            self.eff_violations += 1
+        #    self.violations += 1
+        #    self.eff_violations += 1
 
         self.fines = self.fine_per_violation * self.eff_violations
